@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Epic Mickey Launcher</title>
+        
+        <!-- Include eel.js - note this file doesn't exist in the 'web' directory -->
+        <script type="text/javascript" src="/eel.js"></script>
+        <script type="text/javascript" src="/setup.js"></script>
+        <!-- import style -->
+        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/setup.css">
+        <!-- favicon - netpfp.png -->
+        <link rel="icon" href="/netpfp.png">
+        
+    </head>
+    <body>
+        <div id="content">
+            <h1 class="dropshadow-text">Epic Mickey Launcher</h1>
+            <hr>
+            <h2 class="dropshadow-text">Welcome</h1>
+            <p>It seems it's your first time using the launcher, so we need to get a few things ready.</p>
+            <p>Please confirm the location you would like your extracted games and downloaded addons to be stored.</p>
+            <p>By default, this is the same directory as the launcher.</p>
+            <div class="flex-container">
+                <input type="text" id="storage-location" class="input" style="width: 100%;" value="C:\Users\%USERNAME%\Documents\Epic Mickey Launcher">
+                <button id="storage-location-button" class="button" style="width: auto;" onclick="openFolderDialog()">Browse</button>
+            </div>
+            <br>
+            <button id="storage-location-button" class="large-button">Confirm</button>
+            
+        </div>
+
+    </body>
+</html>

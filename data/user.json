@@ -1,0 +1,10 @@
+{
+    "games" : {
+        "001" : {
+            "id" : "0",
+            "name" : "Epic Mickey",
+            "last-played" : 0
+        }
+    },
+    "assets-dir" : "data/assets/"
+}

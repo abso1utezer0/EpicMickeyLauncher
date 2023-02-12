@@ -1,0 +1,269 @@
+/* vars */
+html {
+    --bg-color : #222222;
+    --fg-color: #383838;
+    --text-color : #ffffff;
+    --accent-color : #303db4;
+    --nav-button-color : #383838;
+    --nav-button-hover-color : #222222;
+    --nav-button-active-color : #303db4;
+    --button-color : #3d3fe6;
+    --button-hover-color : #411fbb;
+    --button-active-color : #1e298b;
+    --button-transition-time : 0.1s;
+    --semi-transparent-white : rgba(255, 255, 255, 0.1)
+}
+body {
+    /* background image is a radial gradient starting at the bottom right */
+    background-image: radial-gradient(circle at bottom left, rgb(22, 22, 53) 0%, rgb(57, 56, 94) 50%, rgb(53, 30, 83) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    color: var(--text-color);
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
+#nav {
+    background-color: rgb(78, 78, 78);
+    color: var(--text-color);
+    height: 40px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    /* drop shadow */
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.nav-button {
+    /* have button fill parent vertically */
+    height: calc(100% - 2px);
+    /* have button fill parent horizontally */
+    flex-grow: 1;
+    /* color the button */
+    background-color: var(--nav-button-color);
+    /* center the text */
+    text-align: center;
+    /* center the text vertically */
+    line-height: 100%;
+    /* get rid of border */
+    border: none;
+    color: var(--text-color);
+    transition: var(--button-transition-time);
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-bottom: 2px;
+    top: 0;
+    /* float to top */
+    position: relative;;
+}
+/* first .nav-button in the nav div */
+#nav .nav-button:first-child {
+    margin-left: none;
+    border-bottom-left-radius: 5px;
+}
+/* last .nav-button in the nav div */
+#nav .nav-button:last-child {
+    margin-right: none;
+    border-bottom-right-radius: 5px;
+}
+.nav-button:hover {
+    /* transition */
+    transition: var(--button-transition-time);
+    background-color: var(--nav-button-hover-color);
+}
+.nav-button:active {
+    /* transition */
+    transition: var(--button-transition-time);
+    background-color: var(--nav-button-active-color);
+}
+
+#content {
+    color: var(--text-color);
+    padding: 10px;
+    /* center div horizontally */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+
+.button {
+    background-color: var(--button-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    transition: var(--button-transition-time);
+    /* drop shadow */
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+    border: solid 1px #6163db;
+}
+.button:hover {
+    /* transition */
+    transition: var(--button-transition-time);
+    background-color: var(--button-hover-color);
+}
+.button:active {
+    /* transition */
+    transition: var(--button-transition-time);
+    background-color: var(--button-active-color);
+}
+.large-button {
+    background-color: var(--nav-button-color);
+    color: var(--text-color);
+    border: var(--semi-transparent-white) 2px solid;
+    border-radius: 5px;
+    padding: 10px;
+    transition: var(--button-transition-time);
+    width: 100%;
+    /* drop shadow */
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+.large-button:hover {
+    /* transition */
+    transition: var(--button-transition-time);
+    background-color: var(--nav-button-hover-color);
+}
+.large-button:active {
+    /* transition */
+    transition: var(--button-transition-time);
+    background-color: var(--nav-button-active-color);
+}
+
+.game-listing {
+    /* background-color: var(--fg-color); */
+    color: var(--text-color);
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    /* order content horizontally */
+    flex-direction: row;
+    height: 50px;
+    backdrop-filter: blur(5em);
+    border-radius: 1em;
+    overflow: hidden;
+    border: 2px solid rgb(121, 121, 121, 0.5);
+    /* fade in over the duration of a second */
+    animation: fadein 0.5s;
+    /* drop shadow */
+    box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.3);
+}
+.transparent {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+.joined-button {
+    background-color: var(--button-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 0;
+    margin: 5px;
+    transition: var(--button-transition-time);
+    /* drop shadow */
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+    border: solid 1px #6163db;
+    display: flex;
+    width: max-content;
+}
+.joined-button > button {
+    flex: 1 1 auto;
+    border: none;
+    background: none;
+    position: relative;
+    text-align: center;
+    line-height: 100%;
+    border-left: solid 1px #6163db;
+    height: 100%;
+    width: calc(100% + 10px);
+    transition: var(--button-transition-time);
+    color: var(--text-color);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.joined-button > button:first-child {
+    border-left: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.joined-button > button:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.joined-button > button:hover {
+    /* transition */
+    transition: var(--button-transition-time);
+    background-color: var(--button-hover-color);
+}
+.joined-button > button:active {
+    /* transition */
+    transition: var(--button-transition-time);
+    background-color: var(--button-active-color);
+}
+.launch-button {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
+.game-title {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+    height: 100%;
+    /* center text horizontally */
+    text-align: center;
+    /* center text vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+.dropshadow-text {
+    text-shadow: 0 3px 1px rgba(0, 0, 0, 0.3);
+}
+hr {
+    border: 2px solid var(--semi-transparent-white);
+    margin: 10px;
+    /* round edges */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    /* order content horizontally */
+    flex-direction: row;
+}
+/* first generation of childrean of flex container */
+.flex-container > * {
+    
+}
+
+/* fade in animation */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* fade out animation */
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
